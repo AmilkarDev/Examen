@@ -1,0 +1,60 @@
+Question 1 :
+
+Description du besoin
+
+	Client
+		Creer un nouveau client
+			Valider que le nom d'utilisateur est renseigné
+			Vérifier que le nom n'est pas déjà utilisé par un autre client
+			Ajouter le client
+
+		Renommer un client
+			Valider que le nom d'utilisateur est renseigné
+			Valider que le client existe
+			Vérifier que le nom a changé
+			Vérifier que le nom n'est pas déjà utilisé par un autre client
+			Modifier le nom d'utilisateur
+
+	Livre
+		Acheter un livre
+			Valider que le client existe
+			Valider que le montant est supérieur à 0
+			Valider que le livre existe
+			Vérifier qu'il reste au moins un exemplaire
+			Valider que le montant est égal ou supérieur à la valeur du livre
+			Décrémanter le nombre d'exemplaire disponible du livre
+			Ajouter un exemplaire vendu du livre au client
+			Retourner le montant restant suite à l'achat
+
+		Rembourser un livre
+			Valider que le client existe
+			Valider que le client à déjà acheté au moins un exemplaire du livre
+			Valider que le livre existe
+			Incrémanter le nombre d'exemplaire disponible du livre
+			Supprimer un exemplaire vendu du livre au client
+			Retourner la valeur du livre
+
+
+Contenu inclus
+	Entité Client
+	Entité Livre
+	Interface du service de base de donnée, du service Client et du service Livre
+
+
+Ce qui doit être fait 
+	Service Client avec ses tests
+	Service Livre avec ses tests
+
+
+Particularité
+	La structure des entitées Client et Livre ne peut être changé
+	Le service de base de données ne doit pas être codé (inutile pour cet examen)
+	Les interfaces des service de base de donnée, Client et Livre ne peuvent être changées
+	Le framework de test et la composante de mock sont à votre choix
+
+
+
+Question 2 : 
+Améliorer le code de la classe Question.cs,dans le projet Questions, pour 
+corriger tous les problèmes et
+  ajuster la relation avec la classe Collaborateur afin de l'utiliser en injection de dépendance.

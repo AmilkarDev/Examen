@@ -1,0 +1,15 @@
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\LibrairieTest.deps.json
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\LibrairieTest.runtimeconfig.json
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\LibrairieTest.runtimeconfig.dev.json
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\LibrairieTest.dll
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\LibrairieTest.pdb
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\Librairie.dll
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\bin\Debug\netcoreapp2.1\Librairie.pdb
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.csprojAssemblyReference.cache
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.AssemblyInfoInputs.cache
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.AssemblyInfo.cs
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.csproj.CoreCompileInputs.cache
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.csproj.CopyComplete
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.dll
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.pdb
+C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\LibrairieTest\obj\Debug\netcoreapp2.1\LibrairieTest.genruntimeconfig.cache

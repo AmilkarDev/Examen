@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2QkJaR9iuv8IAqjkMXIc2azzdB+aHmjc3myDEoIbV8Sgq314C45UivgaaSOFOzXC0o8xvgsG/eJIqDChQvFeyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\360_Corporate_1\\Downloads\\Test_CSharp_dotnet\\Test_CSharp_dotnet\\Questions\\Questions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\360_Corporate_1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\360_Corporate_1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
