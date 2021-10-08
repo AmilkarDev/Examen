@@ -45,7 +45,7 @@ namespace Librairie.Services.Managers
         }
 
         public void RenommerClient(Guid clientId, string nouveauNomClient)
-        {
+         {
             if (string.IsNullOrEmpty(nouveauNomClient))
             {
                 throw new Exception("Nouveau nom non valide :nulle ou vide");
@@ -61,8 +61,7 @@ namespace Librairie.Services.Managers
                 throw new Exception("T'as utilisè le meme nom");
             }
 
-
-            var nomUtilisee = clients.Where(x => x.NomUtilisateur == nouveauNomClient).ToList().Count >= 0;
+            var nomUtilisee = clients.Where(x => x.NomUtilisateur == nouveauNomClient).ToList().Count > 0;
             if (nomUtilisee)
             {
                 throw new Exception("Nom deja utilisèe");
