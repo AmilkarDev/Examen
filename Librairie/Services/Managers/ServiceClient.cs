@@ -9,21 +9,36 @@ namespace Librairie.Services.Managers
 {
     public class ServiceClient : IServiceClient
     {
-        public List<Client> clients = new List<Client>();
+        public List<Client> clients = null;
+
+        public ServiceClient()
+        {
+            clients = new List<Client>();
+        }
         public Client CreerClient(string nomClient)
         {
             Client newClient = null;
+
+            if (string.IsNullOrEmpty(nomClient))
+            {
+                throw new Exception("erreur : Nom client nulle !");
+            }
+
             var registeredClients = clients.Where(x => x.NomUtilisateur == nomClient).ToList();
 
-            if (registeredClients.Count == 0)
+            if(registeredClients.Count > 0)
+            {
+                throw new Exception("erreur : Nom déja utilisé !");
+            }
+            else
             {
                 newClient = new Client
                 {
-                    Id = new Guid(),
+                    Id =  Guid.NewGuid(),
                     NomUtilisateur = nomClient,
                 };
 
-                clients.Add(newClient);
+                 clients.Add(newClient);
             }
                 
             return newClient;      
@@ -31,13 +46,29 @@ namespace Librairie.Services.Managers
 
         public void RenommerClient(Guid clientId, string nouveauNomClient)
         {
-            var client = ChercherClient(clientId);
-            var clientExists = clients.Where(x => x.NomUtilisateur == nouveauNomClient).ToList().Count == 0 ;
-
-            if (client !=null && client.NomUtilisateur!= nouveauNomClient && clientExists )
+            if (string.IsNullOrEmpty(nouveauNomClient))
             {
-                client.NomUtilisateur = nouveauNomClient;
+                throw new Exception("Nouveau nom non valide :nulle ou vide");
             }
+            var client = ChercherClient(clientId);
+            if(client == null)
+            {
+                throw new Exception("Pas de client avec cet Id");
+            }
+
+            if(client.NomUtilisateur == nouveauNomClient)
+            {
+                throw new Exception("T'as utilisè le meme nom");
+            }
+
+
+            var nomUtilisee = clients.Where(x => x.NomUtilisateur == nouveauNomClient).ToList().Count >= 0;
+            if (nomUtilisee)
+            {
+                throw new Exception("Nom deja utilisèe");
+            }
+
+            client.NomUtilisateur = nouveauNomClient;
         }
 
         public Client ChercherClient(Guid clientId)
