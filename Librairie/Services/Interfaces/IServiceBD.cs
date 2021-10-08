@@ -8,7 +8,7 @@ namespace Librairie.Services.Interfaces
         Client ObtenirClient(Guid ID);
         Client ObtenirClient(string nomClient);
         void AjouterClient(Client client);
-        void ModifierClient(Client client);
+         void ModifierClient(Client client);
 
 
         Livre ObtenirLivre(Guid idLivre);

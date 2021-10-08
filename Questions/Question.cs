@@ -13,12 +13,12 @@ namespace Questions
         {
             collaborateurUtils = CollaborateurUtils;
         }
-        public List<string> listeContenuValide = new List<string>();
         public void Traiter(List<string> listeContenu)
         {
             
             string message = null;
             bool estValide = true;
+            List<string> listeContenuValide = new List<string>();
 
             foreach (var contenu in listeContenu)
             {

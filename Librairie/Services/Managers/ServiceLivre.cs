@@ -9,39 +9,37 @@ namespace Librairie.Services.Managers
 {
     public class ServiceLivre : IServiceLivre
     {
-        IServiceClient serviceClient = null;
-        List<Livre> livres = null;
-        public ServiceLivre (IServiceClient ServiceClient)
+        IServiceBD serviceBD = null;
+        public ServiceLivre ( IServiceBD ServiceBD )
         {
-            serviceClient = ServiceClient;
-
-            livres = new List<Livre>
-            {
-                new Livre { Id =  Guid.NewGuid(), Quantite = 150, Valeur=200.5M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 69 , Valeur =50.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 65 , Valeur =140.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 10 , Valeur =80.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 8 , Valeur =42.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 5 , Valeur =50.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 43 , Valeur =99.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 20 , Valeur =25.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 12 , Valeur =10.6M },
-                new Livre { Id =  Guid.NewGuid(), Quantite= 4 , Valeur =120.6M },
-
-            };
+            serviceBD = ServiceBD;
         }
         public decimal AcheterLivre(Guid IdClient, Guid IdLivre, decimal montant)
         {
-            var client = ((ServiceClient)serviceClient).ChercherClient(IdClient);
-            var livre = livres.FirstOrDefault(x => x.Id == IdLivre);
+            var client = serviceBD.ObtenirClient(IdClient);
+            var livre = serviceBD.ObtenirLivre(IdLivre);
 
             bool clientExiste = client != null;
-            bool livreExiste = livre != null && livre.Quantite > 0  ;
-            bool montantSuffisant = montant >= livre.Valeur; 
-
-
-            if( clientExiste && livreExiste && montantSuffisant)
+            if(!clientExiste)
             {
+                throw new Exception("Pas de client avec cet Id");
+            }
+            else if (livre == null)
+            {
+                throw new Exception("Pas de livre avec cet Id");
+            }
+            else if (livre.Quantite == 0)
+            {
+                throw new Exception("Les copie du livre sont tous vendus");
+            }
+            else if(montant <= livre.Valeur)
+            {
+                throw new Exception("Montant Insuffisant");
+            }
+            else
+            {
+
+            
                 if (client.ListeLivreAchete.ContainsKey(livre.Id))
                 {
                     client.ListeLivreAchete[livre.Id]++;
@@ -53,16 +51,22 @@ namespace Librairie.Services.Managers
 
                 livre.Quantite--;
 
-                return montant - livre.Valeur;
-            }
+                serviceBD.ModifierClient(client);
+                serviceBD.ModifierLivre(livre);
 
-            return -1;
+                return montant - livre.Valeur;
+            }            
         }
-           
+
+        public void AcheterLivre(Guid id1, Guid id2)
+        {
+            throw new NotImplementedException();
+        }
+
         public decimal RembourserLivre(Guid IdClient, Guid idLivre)
         {
-            var client = ((ServiceClient)serviceClient).ChercherClient(IdClient);
-            var livre = livres.FirstOrDefault(x => x.Id == idLivre);
+            var client = serviceBD.ObtenirClient(IdClient);
+            var livre = serviceBD.ObtenirLivre(idLivre);
 
 
             bool clientExiste = client != null;
@@ -74,6 +78,9 @@ namespace Librairie.Services.Managers
             {
                 client.ListeLivreAchete[idLivre]--;
                 livre.Quantite++;
+
+                serviceBD.ModifierClient(client);
+                serviceBD.ModifierLivre(livre);
 
                 return livre.Valeur;
             }

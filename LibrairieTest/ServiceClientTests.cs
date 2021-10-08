@@ -1,5 +1,7 @@
 ﻿using Librairie.Entities;
+using Librairie.Services.Interfaces;
 using Librairie.Services.Managers;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -8,20 +10,28 @@ using System.Text;
 
 namespace LibrairieTest
 {
+
     [TestFixture]
     public class ServiceClientTests
     {
+        ServiceClient sut = null;
+        Mock<IServiceBD> MockServiceBD = null;
+        Client result = null;
+
+        [Test]
+        [SetUp]
+        public void Initializer()
+        {
+            MockServiceBD = new Mock<IServiceBD>();
+            sut = new ServiceClient(MockServiceBD.Object);
+            result = sut.CreerClient("Alex");
+        }
+
         [Test]
         public void CreerClient_NomDejaExiste_Failure()
         {
-            //var MockCollabUtils = new Mock<ICollaborateurUtils>();
-            //MockCollabUtils.Setup(t => t.AjouterContenuBD(It.IsAny<string>()));
-            //Question obj = new Question(MockCollabUtils.Object);
-
-            //MockCollabUtils.Setup(t => t.AjouterContenuBD(It.IsAny<string>()));
-
-            ServiceClient sut = new ServiceClient();
-            sut.clients.Add(new Client { Id = new Guid(), NomUtilisateur = "Malek" });
+            MockServiceBD.Setup(t => t.ObtenirClient(It.IsAny<string>()))
+                .Returns(new Client() { NomUtilisateur = "Malek", Id = Guid.NewGuid() }) ;
 
             var ex = Assert.Throws<Exception>(() => sut.CreerClient("Malek"));
             Assert.That(ex.Message, Is.EqualTo("erreur : Nom déja utilisé !"));
@@ -31,8 +41,6 @@ namespace LibrairieTest
         [Test]
         public void CreerClient_NomVide_Failure()
         {
-            ServiceClient sut = new ServiceClient();
-
             var ex = Assert.Throws<Exception>(() => sut.CreerClient(""));
             Assert.That(ex.Message, Is.EqualTo("erreur : Nom client nulle !"));
         }
@@ -40,8 +48,6 @@ namespace LibrairieTest
         [Test]
         public void CreerClient_NomNulle_Failure()
         {
-            ServiceClient sut = new ServiceClient();
-
             var ex = Assert.Throws<Exception>(() => sut.CreerClient(null));
             Assert.That(ex.Message, Is.EqualTo("erreur : Nom client nulle !"));
         }
@@ -49,44 +55,37 @@ namespace LibrairieTest
         [Test]
         public void CreerClient_NomValide_Success()
         {
-            ServiceClient sut = new ServiceClient();
-
             sut.CreerClient("Mirna");
-            var result = sut.CreerClient("Alex");
 
-            Assert.AreEqual(sut.clients.Count, 2);
+            MockServiceBD.Verify(x => x.AjouterClient(It.IsAny<Client>()), Times.Exactly(2));
             Assert.AreEqual(result.NomUtilisateur, "Alex");
         }
 
         [Test]
         public void RenommerClient_NomValide_Success()
         {
-            ServiceClient sut = new ServiceClient();
-            var result = sut.CreerClient("Alex");
+            MockServiceBD.Setup(t => t.ObtenirClient(It.IsAny<Guid>()))
+                .Returns(result);
 
             sut.RenommerClient(result.Id,"Mirna");;
-            
 
-            Assert.AreEqual(sut.clients.Count, 1);
-            Assert.AreEqual(sut.clients.First().NomUtilisateur, "Mirna");
+            MockServiceBD.Verify(x => x.ModifierClient(It.IsAny<Client>()), Times.Exactly(1));
         }
 
         [Test]
         public void RenommerClient_NomReutilisee_Failure()
         {
-            ServiceClient sut = new ServiceClient();
-            var result = sut.CreerClient("Alex");
+            MockServiceBD.Setup(t => t.ObtenirClient(It.IsAny<Guid>()))
+                .Returns(result);
 
             var ex = Assert.Throws<Exception>(() => sut.RenommerClient(result.Id, "Alex"));
+
             Assert.That(ex.Message, Is.EqualTo("T'as utilisè le meme nom"));
         }
 
         [Test]
         public void RenommerClient_NomVide_Failure()
-        {
-            ServiceClient sut = new ServiceClient();
-            var result = sut.CreerClient("Alex");
-
+        {            
             var ex = Assert.Throws<Exception>(() => sut.RenommerClient(result.Id, ""));
             Assert.That(ex.Message, Is.EqualTo("Nouveau nom non valide :nulle ou vide"));
         }
@@ -94,9 +93,10 @@ namespace LibrairieTest
         [Test]
         public void RenommerClient_NomDejaUtilisee_Failure()
         {
-            ServiceClient sut = new ServiceClient();
-            var result = sut.CreerClient("Alex");
-            sut.CreerClient("Mirna");
+            MockServiceBD.Setup(t => t.ObtenirClient(It.IsAny<Guid>()))
+                .Returns(result);
+            MockServiceBD.Setup(t => t.ObtenirClient(It.IsAny<string>()))
+                .Returns(result);
 
             var ex = Assert.Throws<Exception>(() => sut.RenommerClient(result.Id, "Mirna"));
             Assert.That(ex.Message, Is.EqualTo("Nom deja utilisèe"));
@@ -105,9 +105,6 @@ namespace LibrairieTest
         [Test]
         public void RenommerClient_IdNonValide_Failure()
         {
-            ServiceClient sut = new ServiceClient();
-            var result = sut.CreerClient("Alex");
-
             var ex = Assert.Throws<Exception>(() => sut.RenommerClient(Guid.NewGuid(), "Mirna"));
             Assert.That(ex.Message, Is.EqualTo("Pas de client avec cet Id"));
         }
