@@ -58,11 +58,6 @@ namespace Librairie.Services.Managers
             }            
         }
 
-        public void AcheterLivre(Guid id1, Guid id2)
-        {
-            throw new NotImplementedException();
-        }
-
         public decimal RembourserLivre(Guid IdClient, Guid idLivre)
         {
             var client = serviceBD.ObtenirClient(IdClient);
@@ -70,11 +65,26 @@ namespace Librairie.Services.Managers
 
 
             bool clientExiste = client != null;
-            bool livreExiste = livre != null && livre.Quantite > 0;
+            bool achatFait = false ;
 
-            bool achatFait = client.ListeLivreAchete.ContainsKey(idLivre) && client.ListeLivreAchete[idLivre] > 0 ;
+            if (clientExiste)
+            {
+                achatFait = client.ListeLivreAchete.ContainsKey(idLivre) && client.ListeLivreAchete[idLivre] > 0;
+            }
 
-            if(clientExiste && livreExiste && achatFait)
+            if (!clientExiste)
+            {
+                throw new Exception("Pas de client avec cet Id");
+            }
+            else if(livre == null)
+            {
+                throw new Exception("Pas de livre avec cet Id");
+            }
+            else if (!achatFait)
+            {
+                throw new Exception("Ce client n'a pas acheter le livre sujet");
+            }
+            else 
             {
                 client.ListeLivreAchete[idLivre]--;
                 livre.Quantite++;
@@ -84,8 +94,6 @@ namespace Librairie.Services.Managers
 
                 return livre.Valeur;
             }
-
-            return -1;
         }
     }
 }

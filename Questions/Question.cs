@@ -14,8 +14,7 @@ namespace Questions
             collaborateurUtils = CollaborateurUtils;
         }
         public void Traiter(List<string> listeContenu)
-        {
-            
+        {            
             string message = null;
             bool estValide = true;
             List<string> listeContenuValide = new List<string>();
@@ -29,7 +28,6 @@ namespace Questions
 
                 if (estValide && !listeContenuValide.Contains(contenu))
                 {
-                    //listeContenuValide.Add(contenu.Substring(0,10));
                     listeContenuValide.Add(contenu);
                 }
             }
