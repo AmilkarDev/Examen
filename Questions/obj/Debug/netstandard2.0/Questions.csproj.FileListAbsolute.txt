@@ -6,4 +6,3 @@ C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questio
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.csproj.CoreCompileInputs.cache
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.dll
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.pdb
-C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.csprojAssemblyReference.cache
