@@ -23,7 +23,7 @@ Description du besoin
 			Vérifier qu'il reste au moins un exemplaire
 			Valider que le montant est égal ou supérieur à la valeur du livre
 			Décrémanter le nombre d'exemplaire disponible du livre
-			Ajouter un exemplaire vendu du livre au client
+			Ajouter un exemplaire vendu du livre au client  
 			Retourner le montant restant suite à l'achat
 
 		Rembourser un livre
@@ -56,5 +56,4 @@ Particularité
 
 Question 2 : 
 Améliorer le code de la classe Question.cs,dans le projet Questions, pour 
-corriger tous les problèmes et
-  ajuster la relation avec la classe Collaborateur afin de l'utiliser en injection de dépendance.
+corriger tous les problèmes et  ajuster la relation avec la classe Collaborateur afin de l'utiliser en injection de dépendance.

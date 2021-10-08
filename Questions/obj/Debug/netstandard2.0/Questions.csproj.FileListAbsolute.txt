@@ -7,3 +7,11 @@ C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questio
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.dll
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.pdb
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Questions\obj\Debug\netstandard2.0\Questions.csprojAssemblyReference.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\bin\Debug\netstandard2.0\Questions.deps.json
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\bin\Debug\netstandard2.0\Questions.dll
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\bin\Debug\netstandard2.0\Questions.pdb
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\obj\Debug\netstandard2.0\Questions.AssemblyInfoInputs.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\obj\Debug\netstandard2.0\Questions.AssemblyInfo.cs
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\obj\Debug\netstandard2.0\Questions.csproj.CoreCompileInputs.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\obj\Debug\netstandard2.0\Questions.dll
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Questions\obj\Debug\netstandard2.0\Questions.pdb

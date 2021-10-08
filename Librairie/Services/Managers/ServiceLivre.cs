@@ -17,16 +17,16 @@ namespace Librairie.Services.Managers
 
             livres = new List<Livre>
             {
-                new Livre { Id = new Guid(), Quantite = 150, Valeur=200.5M },
-                new Livre { Id = new Guid(), Quantite= 69 , Valeur =50.6M },
-                new Livre { Id = new Guid(), Quantite= 65 , Valeur =140.6M },
-                new Livre { Id = new Guid(), Quantite= 10 , Valeur =80.6M },
-                new Livre { Id = new Guid(), Quantite= 8 , Valeur =42.6M },
-                new Livre { Id = new Guid(), Quantite= 5 , Valeur =50.6M },
-                new Livre { Id = new Guid(), Quantite= 43 , Valeur =99.6M },
-                new Livre { Id = new Guid(), Quantite= 20 , Valeur =25.6M },
-                new Livre { Id = new Guid(), Quantite= 12 , Valeur =10.6M },
-                new Livre { Id = new Guid(), Quantite= 4 , Valeur =120.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite = 150, Valeur=200.5M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 69 , Valeur =50.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 65 , Valeur =140.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 10 , Valeur =80.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 8 , Valeur =42.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 5 , Valeur =50.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 43 , Valeur =99.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 20 , Valeur =25.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 12 , Valeur =10.6M },
+                new Livre { Id =  Guid.NewGuid(), Quantite= 4 , Valeur =120.6M },
 
             };
         }

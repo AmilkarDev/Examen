@@ -6,7 +6,7 @@
         //Ajoute le contenu dans une table
         public static void AjouterContenuBD(string contenu)
         {
-            //Code ommis pour ne pas mettre l'emphase sur la communication BD
+            //Code ommis pour ne pas mettre l'emphase sur la communication BD  
         }
     }
 }

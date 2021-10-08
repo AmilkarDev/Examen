@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gqjQ35mYKrHkkXE7IsQnkhU0JR2JTXUEYxx9uPHjzmHGIkFPSHU0NHzocRA7GN6y4U2XxXP0nQfTgZbIquV/eQ==",
+  "dgSpecHash": "gJC7qMvNeCDilzH+HYwqjAvcZSs40YQr8djJ4Q39sutT7pAG2vtnu3+zzS2oOS5Ci1Sa4y8S44a95QaWDqW7iQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\360_Corporate_1\\Downloads\\Test_CSharp_dotnet\\Test_CSharp_dotnet\\Librairie\\Librairie.csproj",
+  "projectFilePath": "C:\\Users\\Amilkar\\Desktop\\examen\\Examen\\Librairie\\Librairie.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\360_Corporate_1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\360_Corporate_1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

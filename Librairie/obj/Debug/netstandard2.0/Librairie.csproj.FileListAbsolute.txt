@@ -7,3 +7,12 @@ C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Librair
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Librairie\obj\Debug\netstandard2.0\Librairie.dll
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Librairie\obj\Debug\netstandard2.0\Librairie.pdb
 C:\Users\360_Corporate_1\Downloads\Test_CSharp_dotnet\Test_CSharp_dotnet\Librairie\obj\Debug\netstandard2.0\Librairie.csprojAssemblyReference.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\bin\Debug\netstandard2.0\Librairie.deps.json
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\bin\Debug\netstandard2.0\Librairie.dll
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\bin\Debug\netstandard2.0\Librairie.pdb
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.AssemblyInfoInputs.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.AssemblyInfo.cs
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.csproj.CoreCompileInputs.cache
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.dll
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.pdb
+C:\Users\Amilkar\Downloads\Examen-master\Examen-master\Librairie\obj\Debug\netstandard2.0\Librairie.csprojAssemblyReference.cache
